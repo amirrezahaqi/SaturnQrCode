@@ -1,16 +1,6 @@
-# flutter_application_1
+![image_2023-05-09_22-33-39](https://user-images.githubusercontent.com/88787993/237025167-b6c65fdd-d618-4054-ae64-211f253f9bb4.png)
 
-A new Flutter project.
 
-## Getting Started
+![image](https://user-images.githubusercontent.com/88787993/237024892-97bbb24b-159a-4810-93b2-0a5b505285d0.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Saturn Qr  is a mobile application that has been developed with Flutter technology. In this application, it is possible to create a qr code and also scan a qr code.
