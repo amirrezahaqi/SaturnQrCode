@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconGen {
   const $AssetsIconGen();
 
+  /// File path: assets/icon/download.svg
+  String get download => 'assets/icon/download.svg';
+
   /// File path: assets/icon/github.svg
   String get github => 'assets/icon/github.svg';
 
@@ -44,6 +47,7 @@ class $AssetsIconGen {
 
   /// List of all assets
   List<String> get values => [
+        download,
         github,
         home,
         instagram,

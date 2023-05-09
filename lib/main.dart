@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/qr-code-generator.dart';
+import 'package:flutter_application_1/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const GenerateScreen(),
+      home: const SplashScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
