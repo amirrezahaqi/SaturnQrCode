@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/view/about_screen.dart';
+import 'package:flutter_application_1/view/home_screen.dart';
+import 'package:flutter_application_1/view/main_screen.dart';
 
-import 'package:flutter_application_1/scanqrcode.dart';
-import 'package:flutter_application_1/splash.dart';
+import 'package:flutter_application_1/view/scanner_screen.dart';
+import 'package:flutter_application_1/view/splash_screen.dart';
+import 'package:get/get.dart';
 
-void main() => runApp(
-    const MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen()));
+import 'controller/binding.dart';
+import 'controller/bottomnavigation_controler.dart';
+import 'routes/screens_routes.dart';
+
+void main() => runApp(MyHome());
 
 class MyHome extends StatelessWidget {
-  const MyHome({Key? key}) : super(key: key);
+  MyHome({Key? key}) : super(key: key);
+  final BottomNavigationController navigationController =
+      Get.put(BottomNavigationController());
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Flutter Demo Home Page')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const QRViewExample(),
-            ));
-          },
-          child: const Text('qrView'),
-        ),
-      ),
+    return GetMaterialApp(
+      initialBinding: ControllerBinding(),
+      getPages: [
+        GetPage(
+            name: ScreenRoutes.mainScreenRoute, page: () => const MainScreen()),
+        GetPage(
+            name: ScreenRoutes.aboutScreenRoute,
+            page: () => const AboutScreen()),
+      ],
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
     );
   }
 }

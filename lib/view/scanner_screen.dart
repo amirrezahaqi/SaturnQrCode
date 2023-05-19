@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants.dart';
+import 'package:flutter_application_1/constant/constants.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';

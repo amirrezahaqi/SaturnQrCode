@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants.dart';
+import 'package:flutter_application_1/constant/constants.dart';
+import 'package:flutter_application_1/controller/bottomnavigation_controler.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
-import 'package:flutter_application_1/qr-code-generator.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
+import '../routes/screens_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,13 +14,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final BottomNavigationController navigationController =
+      Get.put(BottomNavigationController());
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3)).then((value) async {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const GenerateScreen()),
-      );
+      Get.offAndToNamed(ScreenRoutes.mainScreenRoute);
     });
     super.initState();
   }

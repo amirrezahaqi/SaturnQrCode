@@ -1,26 +1,29 @@
-// ignore: file_names
-import 'dart:typed_data';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_application_1/constant/constants.dart';
 import 'package:flutter_application_1/gen/assets.gen.dart';
-import 'package:flutter_application_1/scanqrcode.dart';
+import 'package:flutter_application_1/view/scanner_screen.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-class GenerateScreen extends StatefulWidget {
-  const GenerateScreen({super.key});
+import '../controller/bottomnavigation_controler.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
   @override
-  State<StatefulWidget> createState() => GenerateScreenState();
+  State<StatefulWidget> createState() => HomeScreenState();
 }
 
-class GenerateScreenState extends State<GenerateScreen> {
+class HomeScreenState extends State<HomeScreen> {
   GlobalKey globalKey = GlobalKey();
   String _dataString = "Hello from this QR";
   final TextEditingController _textController = TextEditingController();
+  final BottomNavigationController navigationController =
+      Get.put(BottomNavigationController());
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +104,6 @@ class GenerateScreenState extends State<GenerateScreen> {
                                     await ImageGallerySaver.saveImage(
                                   Uint8List.fromList(bytes),
                                 );
-                                print(result);
                               }
                             }
 
@@ -160,6 +162,18 @@ class GenerateScreenState extends State<GenerateScreen> {
                             focusedBorder: InputBorder.none,
                             hintText: "Enter Your Links Or Texts",
                             icon: GestureDetector(
+                              onTap: () {
+                                pasteLinkToField() async {
+                                  ClipboardData? copyData =
+                                      await Clipboard.getData(
+                                          Clipboard.kTextPlain);
+                                  if (copyData != null) {
+                                    _textController.text = copyData.text!;
+                                  }
+                                }
+
+                                pasteLinkToField();
+                              },
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: SvgPicture.asset(Assets.icon.paste),
@@ -220,80 +234,6 @@ class GenerateScreenState extends State<GenerateScreen> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.all(10),
-        height: size.height / 10,
-        color: AppConstants.secondColor,
-        child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              BottomNavItem(
-                imagePath: 'assets/icon/home.svg',
-                lable: AppConstants.home,
-                onTap: () {},
-                isActive: true,
-              ),
-              BottomNavItem(
-                imagePath: 'assets/icon/star.svg',
-                lable: AppConstants.rateus,
-                onTap: () {},
-              ),
-              BottomNavItem(
-                imagePath: 'assets/icon/users.svg',
-                lable: AppConstants.aboutus,
-                onTap: () {},
-              ),
-              BottomNavItem(
-                imagePath: 'assets/icon/share.svg',
-                lable: AppConstants.shareApp,
-                onTap: () {},
-              ),
-            ]),
-      ),
-    );
-  }
-}
-
-class BottomNavItem extends StatelessWidget {
-  const BottomNavItem({
-    super.key,
-    required this.onTap,
-    required this.imagePath,
-    required this.lable,
-    this.lableSpace = 4,
-    this.isActive = false,
-    this.activeColor = AppConstants.primareyColor,
-    this.deactivateColor = AppConstants.whiteColor,
-    this.activeLableColor = AppConstants.primareyColor,
-  });
-
-  final Function() onTap;
-  final String imagePath;
-  final String lable;
-  final double lableSpace;
-  final bool isActive;
-  final Color activeColor;
-  final Color activeLableColor;
-  final Color deactivateColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Column(
-        children: [
-          SvgPicture.asset(imagePath,
-              colorFilter: ColorFilter.mode(
-                  isActive ? activeColor : deactivateColor, BlendMode.srcIn)),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(lable,
-              style: GoogleFonts.vazirmatn(
-                  color: isActive ? activeLableColor : deactivateColor))
-        ],
       ),
     );
   }
