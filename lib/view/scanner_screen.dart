@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constant/constants.dart';
-import 'package:flutter_application_1/gen/assets.gen.dart';
+import 'package:saturn_qr/constant/constants.dart';
+import 'package:saturn_qr/gen/assets.gen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -53,7 +53,7 @@ class _QRViewExampleState extends State<QRViewExample> {
                 children: <Widget>[
                   if (result != null)
                     Text(
-                      'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
+                      '${result!.code}',
                       style: GoogleFonts.vazirmatn(
                         color: AppConstants.whiteColor,
                       ),

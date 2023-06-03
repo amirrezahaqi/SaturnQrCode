@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constant/constants.dart';
-import 'package:flutter_application_1/controller/bottomnavigation_controler.dart';
-import 'package:flutter_application_1/view/home_screen.dart';
+import 'package:saturn_qr/constant/constants.dart';
+import 'package:saturn_qr/controller/bottomnavigation_controler.dart';
+import 'package:saturn_qr/view/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class LinkeryBottomNavigation extends StatelessWidget {
-  const LinkeryBottomNavigation({
+class AppBottomNavigation extends StatelessWidget {
+  const AppBottomNavigation({
     super.key,
     required this.onTapChange,
   });
@@ -23,7 +24,7 @@ class LinkeryBottomNavigation extends StatelessWidget {
       () => Container(
         width: double.infinity,
         padding: const EdgeInsets.all(10),
-        height: size.height / 10,
+        height: size.height / 9,
         color: AppConstants.secondColor,
         child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +39,16 @@ class LinkeryBottomNavigation extends StatelessWidget {
               BottomNavItem(
                 imagePath: 'assets/icon/star.svg',
                 lable: AppConstants.rateus,
-                onTap: () {},
+                onTap: () {
+                  myLaunchUrl(String url) async {
+                    var uri = Uri.parse(url);
+                    if (await canLaunchUrl(uri)) {
+                      await launchUrl(uri);
+                    }
+                  }
+
+                  myLaunchUrl("https://parsiait.ir/");
+                },
               ),
               BottomNavItem(
                 imagePath: 'assets/icon/users.svg',
@@ -51,7 +61,7 @@ class LinkeryBottomNavigation extends StatelessWidget {
                 imagePath: 'assets/icon/share.svg',
                 lable: AppConstants.shareApp,
                 onTap: () {
-                  Share.share('check out my website https://amirrezahaqi.ir',
+                  Share.share('. check out my website https://amirrezahaqi.ir',
                       subject: 'Saturn QR Code App');
                 },
               ),

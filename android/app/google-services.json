@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "941380320193",
+    "project_id": "saturn-qr",
+    "storage_bucket": "saturn-qr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941380320193:android:88409dfda3cf35e83f0d40",
+        "android_client_info": {
+          "package_name": "com.example.flutter_saturn_qr_code_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941380320193-ec742a8ljbl489tkepot5f9kh4bg2390.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb3NQ2In5qF7RAc7DfGzKzuz43XdzS_yM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941380320193-ec742a8ljbl489tkepot5f9kh4bg2390.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "941380320193-78ifhfeok9014tcp621a18h9o5pb548n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplication1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

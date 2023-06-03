@@ -67,6 +67,10 @@ class $AssetsImageGen {
   /// File path: assets/image/applogo.png
   AssetGenImage get applogo => const AssetGenImage('assets/image/applogo.png');
 
+  /// File path: assets/image/ic_my_new_icon.png
+  AssetGenImage get icMyNewIcon =>
+      const AssetGenImage('assets/image/ic_my_new_icon.png');
+
   /// File path: assets/image/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/image/logo.png');
 
@@ -75,7 +79,7 @@ class $AssetsImageGen {
       const AssetGenImage('assets/image/logotext.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [applogo, logo, logotext];
+  List<AssetGenImage> get values => [applogo, icMyNewIcon, logo, logotext];
 }
 
 class Assets {

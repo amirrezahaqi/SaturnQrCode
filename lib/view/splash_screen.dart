@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constant/constants.dart';
-import 'package:flutter_application_1/controller/bottomnavigation_controler.dart';
-import 'package:flutter_application_1/gen/assets.gen.dart';
+import 'package:saturn_qr/constant/constants.dart';
+import 'package:saturn_qr/controller/bottomnavigation_controler.dart';
+import 'package:saturn_qr/gen/assets.gen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import '../routes/screens_routes.dart';

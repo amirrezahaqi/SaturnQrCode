@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/constant/constants.dart';
-import 'package:flutter_application_1/gen/assets.gen.dart';
-import 'package:flutter_application_1/view/scanner_screen.dart';
+import 'package:saturn_qr/constant/constants.dart';
+import 'package:saturn_qr/gen/assets.gen.dart';
+import 'package:saturn_qr/view/scanner_screen.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,18 +32,16 @@ class HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppConstants.background,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Padding(
-            padding: const EdgeInsets.only(right: 50),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Assets.image.logo.image(),
-                const SizedBox(
-                  width: 10,
-                ),
-                const Text(AppConstants.saturnQr)
-              ],
-            )),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Assets.image.logo.image(),
+            const SizedBox(
+              width: 10,
+            ),
+            const Text(AppConstants.saturnQr)
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -52,7 +50,7 @@ class HomeScreenState extends State<HomeScreen> {
             Center(
               child: Container(
                 width: size.width / 1.25,
-                height: size.width / 1.1,
+                height: size.width / 1.07,
                 decoration: BoxDecoration(
                     color: AppConstants.secondColor,
                     borderRadius: BorderRadius.circular(20)),

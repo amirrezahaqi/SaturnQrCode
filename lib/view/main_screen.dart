@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/view/about_screen.dart';
-import 'package:flutter_application_1/view/widgets/bottomNavigation.dart';
+import 'package:saturn_qr/view/about_screen.dart';
+import 'package:saturn_qr/view/widgets/bottomNavigation.dart';
 import 'package:get/get.dart';
 
 import '../controller/bottomnavigation_controler.dart';
@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
     return Obx(
       () {
         return Scaffold(
-            bottomNavigationBar: LinkeryBottomNavigation(
+            bottomNavigationBar: AppBottomNavigation(
               onTapChange: (index) {
                 navigationController.currentIndex.value = index;
               },

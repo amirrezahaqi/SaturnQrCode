@@ -14,7 +14,7 @@ class AppConstants {
   static const String scanQrCodeBtn = "Scan Your Qr Code";
   static const String saturnQr = "Saturn Qr";
   static const String home = "Home";
-  static const String rateus = "Rate us";
+  static const String rateus = "Services";
   static const String aboutus = "About us";
   static const String shareApp = "Share App";
   static const String developer = "Developer:";

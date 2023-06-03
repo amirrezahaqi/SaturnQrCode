@@ -1,4 +1,4 @@
-name: flutter_application_1
+name: saturn_qr
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -44,6 +44,16 @@ dependencies:
   share_plus: ^7.0.1
   url_launcher: ^6.1.11
   get: ^4.6.5
+  flutter_launcher_icons: ^0.13.1
+  firebase_core: ^2.13.0
+  firebase_analytics: ^10.4.1
+  firebase_crashlytics: ^3.3.1
+  firebase_messaging: ^14.6.1
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/image/ic_my_new_icon.png"
+  min_sdk_android: 20
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +79,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/image/applogo.png
     - assets/image/
     - assets/icon/
 
